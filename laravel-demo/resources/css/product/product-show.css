@@ -1,0 +1,125 @@
+:root{
+  --brand-pink:#F91873;
+  --brand-blue:#0348B6;
+  --brand-cyan:#03BBD5;
+
+  --ink:#0f172a;
+  --muted:#64748b;
+  --line:rgba(2, 6, 23, .10);
+  --panel:#ffffff;
+  --panel-2:#f8fafc;
+  --shadow: 0 10px 30px rgba(2, 6, 23, .08);
+}
+
+.p-wrap{
+  max-width: 1150px;
+  margin: 24px auto;
+  padding: 0 18px;
+}
+
+.p-top{
+  display:flex;
+  align-items:flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.p-title{
+  margin: 0;
+  font-size: 32px;
+  color: var(--brand-blue);
+  font-family: "Instrument Serif", serif;
+}
+
+.p-back{
+  display:inline-block;
+  margin-top: 6px;
+  text-decoration:none;
+  color: var(--brand-blue);
+  font-weight: 600;
+  opacity: .9;
+}
+.p-back:hover{ text-decoration: underline; }
+
+.p-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .9fr;
+  gap: 18px;
+}
+
+.p-media{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+
+.p-img{
+  width:100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 14px;
+  display:block;
+}
+
+.p-card{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.p-h2{
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  letter-spacing: .25px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.p-table{
+  width:100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(2,6,23,.10);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.p-table th,
+.p-table td{
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(2,6,23,.10);
+  vertical-align: top;
+}
+
+.p-table tr:last-child th,
+.p-table tr:last-child td{
+  border-bottom: none;
+}
+
+.p-table th{
+  width: 34%;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  font-size: 12px;
+  background: rgba(3,72,182,.06);
+}
+
+.p-table td{
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.muted{
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+@media (max-width: 900px){
+  .p-grid{ grid-template-columns: 1fr; }
+  .p-img{ height: 360px; }
+}

@@ -1,0 +1,152 @@
+/* ===== POLICY PAGE ===== */
+:root{
+  --brand-pink: #F91873;
+  --brand-blue: #0348B6;
+  --brand-cyan: #03BBD5;
+}
+
+.policy-page{
+  width: min(1100px, 92%);
+  margin: 0 auto 80px;
+  font-family: "Instrument Serif", serif;
+}
+
+/* HERO */
+.policy-hero{
+  padding: 64px 0 42px;
+  text-align: center;
+}
+
+.policy-hero h1{
+  font-size: clamp(34px, 4vw, 54px);
+  color: var(--brand-blue);
+  margin-bottom: 12px;
+}
+
+.policy-hero p{
+  font-size: 20px;
+  color: rgba(0,0,0,0.65);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* CONTENT */
+.policy-content{
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(3,72,182,0.12);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  padding: 42px 48px;
+}
+
+.policy-content p{
+  font-size: 19px;
+  line-height: 1.8;
+  color: rgba(0,0,0,0.75);
+  margin-bottom: 16px;
+}
+
+.policy-content h2{
+  margin-top: 36px;
+  margin-bottom: 12px;
+  font-size: 26px;
+  color: var(--brand-blue);
+}
+
+.policy-content h3{
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-size: 20px;
+  color: var(--brand-pink);
+}
+
+.policy-content ul{
+  padding-left: 20px;
+  margin: 10px 0 18px;
+}
+
+.policy-content li{
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(0,0,0,0.75);
+  margin-bottom: 6px;
+}
+
+/* CONTACT BOX */
+.policy-contact{
+  margin-top: 18px;
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(3,72,182,0.08),
+    rgba(249,24,115,0.08)
+  );
+}
+
+.policy-contact p{
+  margin: 6px 0;
+  font-size: 18px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+  .policy-content{
+    padding: 28px 22px;
+  }
+
+  .policy-hero{
+    padding: 48px 0 28px;
+  }
+}
+/* ===== PAYMENT METHODS TABLE ===== */
+.pm-table-wrap{
+  margin: 14px 0 18px;
+  border: 1px solid rgba(3,72,182,0.12);
+  border-radius: 16px;
+  overflow: auto;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.06);
+}
+
+.pm-table{
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.pm-table thead th{
+  text-align: left;
+  font-size: 13px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.55);
+  background: rgba(3,72,182,.06);
+  border-bottom: 1px solid rgba(3,72,182,0.12);
+  padding: 12px 14px;
+}
+
+.pm-table tbody td{
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(3,72,182,0.10);
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(0,0,0,0.75);
+  vertical-align: top;
+}
+
+.pm-table tbody tr:hover{
+  background: rgba(3,187,213,.06);
+}
+
+.pm-note{
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(3,187,213,.20);
+  background: rgba(3,187,213,.08);
+  color: rgba(0,0,0,.68);
+  font-size: 18px;
+  line-height: 1.65;
+}

@@ -1,0 +1,439 @@
+/* ===== Service Detail (Subscription + Samples) ===== */
+:root{
+  --brand-pink: #F91873;
+  --brand-blue: #0348B6;
+  --brand-cyan: #03BBD5;
+}
+
+/* ================= LAYOUT ================= */
+.service-detail{
+  width: min(1200px, 92%);
+  margin: 0 auto 56px;
+}
+
+/* ================= HEADER ================= */
+.sd-head{
+  margin-bottom: 18px;
+}
+
+.service-title{
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(30px, 3vw, 50px);
+  line-height: 1.05;
+  margin: 0 0 10px;
+  color: var(--brand-blue);
+}
+
+.sd-sub{
+  margin: 0;
+  color: rgba(0,0,0,0.70);
+  line-height: 1.7;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ================= BUY BOX ================= */
+.sd-buy{
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 24px;
+
+  border-radius: 18px;
+  border: 1px solid rgba(3,72,182,0.12);
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(0,0,0,0.10);
+}
+
+.sd-badge{
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(249,24,115,0.12);
+  color: var(--brand-pink);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.sd-buy-title{
+  margin: 10px 0;
+  font-size: 36px;
+  color: var(--brand-blue);
+}
+
+.sd-price{
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.sd-price-amount{
+  font-family: "Instrument Serif", serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--brand-blue);
+}
+
+.sd-price-term{
+  color: rgba(0,0,0,0.60);
+  font-weight: 700;
+}
+
+.sd-points{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  font-size: 20px;
+  color: rgba(0,0,0,0.78);
+}
+
+.sd-points i{
+  color: var(--brand-cyan);
+  margin-right: 8px;
+}
+
+/* ================= BUTTON ROW ================= */
+.sd-cart-form{
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  margin-top: 6px;
+  width: 100%;
+  flex-wrap: nowrap; /* QUAN TRỌNG: không cho rớt hàng */
+}
+
+/* Pay Now = 3 phần */
+.sd-pay{
+  flex: 3 1 0;
+  min-width: 0;
+  height: 56px;
+
+  border: 0;
+  border-radius: 16px;
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-pink));
+  color: #fff;
+
+  font-weight: 900;
+  font-size: 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  cursor: pointer;
+  box-shadow:
+    0 14px 30px rgba(3,72,182,0.22),
+    0 14px 30px rgba(249,24,115,0.18);
+}
+
+.sd-pay:hover{
+  filter: brightness(1.06);
+}
+
+/* Back to Services = 2 phần */
+.sd-back{
+  flex: 2 1 0;
+  min-width: 0;
+  height: 56px;
+  padding: 0 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+  border: 1px solid rgba(3,72,182,0.25);
+  background: #fff;
+
+  color: var(--brand-blue);
+  font-weight: 800;
+  text-decoration: none;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sd-back:hover{
+  border-color: var(--brand-pink);
+  color: var(--brand-pink);
+}
+
+/* ================= SLIDER (REWORK) ================= */
+.sd-slider{
+  margin-top: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(3,72,182,0.12);
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* Header */
+.sd-slider-head{
+  padding: 20px 22px 12px;
+  border-bottom: 1px solid rgba(3,72,182,0.10);
+}
+
+.sd-section-title{
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: var(--brand-blue);
+}
+
+.sd-section-sub{
+  margin: 0;
+  color: rgba(0,0,0,0.65);
+  line-height: 1.7;
+  font-size: 20px;
+}
+
+/* Carousel wrapper */
+.sd-carousel{
+  position: relative;
+  padding: 16px; /* tạo “khung” trắng đẹp quanh ảnh */
+  background: #fff;
+}
+
+/* Track = khung ảnh */
+.sd-track{
+  position: relative;
+  height: 420px;              /* cao hơn để nhìn sang */
+  border-radius: 16px;        /* bo góc ảnh */
+  overflow: hidden;           /* cắt ảnh theo bo góc */
+  background: #0b1020;        /* nền dự phòng khi ảnh load */
+}
+
+/* Slide */
+.sd-slide{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.015);
+  transition: opacity .45s ease, transform .65s ease;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  will-change: opacity, transform;
+}
+
+.sd-slide.is-active{
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+/* Overlay: dùng 3 màu brand + tối đáy cho chữ */
+.sd-slide-overlay{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 360px at 18% 30%, rgba(3,187,213,0.20), transparent 60%),
+    radial-gradient(900px 360px at 78% 20%, rgba(249,24,115,0.18), transparent 60%),
+    linear-gradient(180deg, rgba(3,72,182,0.12) 0%, rgba(0,0,0,0.42) 55%, rgba(0,0,0,0.78) 100%);
+}
+
+/* Content box */
+.sd-slide-content{
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 2;
+
+  max-width: 620px;
+  padding: 16px 16px 18px;
+  border-radius: 16px;
+
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+}
+
+.sd-slide-eyebrow{
+  margin: 0 0 8px;
+  font-size: 14px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--brand-cyan);
+}
+
+.sd-slide-title{
+  margin: 0 0 8px;
+  font-size: clamp(26px, 2.2vw, 36px);
+  line-height: 1.05;
+  color: #fff;
+}
+
+.sd-slide-text{
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* NAV BUTTONS: đặt trong khung ảnh, đẹp và không “lọt” */
+.sd-nav{
+  position: absolute;
+  top: calc(16px + 50%);      /* 16px = padding của .sd-carousel */
+  transform: translateY(-50%);
+  z-index: 5;
+
+  height: 46px;
+  width: 46px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(10,12,22,0.42);
+  color: #fff;
+
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+
+  transition: transform .18s ease, background .18s ease, border-color .18s ease, filter .18s ease;
+}
+
+.sd-nav.prev{ left: 28px; }   /* 16px padding + 12px */
+.sd-nav.next{ right: 28px; }
+
+.sd-nav:hover{
+  background: rgba(10,12,22,0.62);
+  border-color: rgba(3,187,213,0.40);
+  filter: brightness(1.05);
+}
+
+/* DOTS: nằm giữa đáy ảnh */
+.sd-dots{
+  position: absolute;
+  left: 50%;
+  bottom: 28px;              /* 16px padding + 12px */
+  transform: translateX(-50%);
+  z-index: 6;
+
+  display: flex;
+  gap: 10px;
+
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(10,12,22,0.35);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(8px);
+}
+
+.sd-dot{
+  height: 10px;
+  width: 10px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  background: rgba(255,255,255,0.40);
+}
+
+.sd-dot.is-active{
+  width: 26px;
+  background: linear-gradient(90deg, var(--brand-cyan), var(--brand-blue), var(--brand-pink));
+}
+
+/* ================= RESPONSIVE (BANNER) ================= */
+@media (max-width: 900px){
+  .sd-carousel{ padding: 14px; }
+  .sd-track{ height: 360px; }
+  .sd-slide-content{ max-width: 85%; }
+  .sd-nav.prev{ left: 22px; }
+  .sd-nav.next{ right: 22px; }
+  .sd-dots{ bottom: 22px; }
+}
+
+@media (max-width: 520px){
+  .sd-carousel{ padding: 12px; }
+  .sd-track{ height: 300px; }
+  .sd-nav{ display: none; }  /* mobile thường swipe/dot là đủ */
+  .sd-slide-content{
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: none;
+  }
+  .sd-dots{ bottom: 18px; }
+}
+
+
+/* ================= INFO PANELS ================= */
+.sd-info{
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.sd-panel{
+  position: relative;
+  padding: 18px 18px 18px 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(3,72,182,0.12);
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.sd-panel::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    var(--brand-cyan),
+    var(--brand-blue),
+    var(--brand-pink)
+  );
+}
+
+.sd-panel-title{
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--brand-blue);
+}
+
+.sd-panel-text,
+.sd-list{
+  font-size: 20px;
+  line-height: 1.75;
+  color: rgba(0,0,0,0.72);
+}
+
+.sd-list{
+  padding-left: 18px;
+}
+
+.sd-list li{ margin: 6px 0; }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px){
+  .sd-track{ height: 320px; }
+  .sd-pay, .sd-back{
+    height: 52px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 520px){
+  .sd-track{ height: 280px; }
+  .sd-pay, .sd-back{
+    height: 48px;
+    font-size: 15px;
+  }
+}
