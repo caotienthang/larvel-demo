@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng nhập - Netflix Style</title>
+  <title>Lunasjaya Login</title>
   <style>
   :root{
     --brand-pink:#F91873;

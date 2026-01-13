@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netflix Style Demo</title>
+  <title>Lunasjaya Shop</title>
 
   @vite([
     'resources/js/app.js'
@@ -23,7 +23,7 @@
   <div class="promo-track" data-slider-track>
 
     <article class="promo-slide is-active" data-slide
-      style="--bg:url('https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=2400&q=80');">
+      style="--bg:url('https://egead.nyc3.cdn.digitaloceanspaces.com/17678570730986dgg2y.webp');">
       <div class="promo-overlay"></div>
 
       <div class="promo-inner">
@@ -37,7 +37,7 @@
     </article>
 
     <article class="promo-slide" data-slide
-      style="--bg:url('https://images.unsplash.com/photo-1520975682034-64a3c1a8f0b2?auto=format&fit=crop&w=2400&q=80');">
+      style="--bg:url('https://egead.nyc3.cdn.digitaloceanspaces.com/1767846284953ysegy7.webp');">
       <div class="promo-overlay"></div>
 
       <div class="promo-inner">
@@ -49,21 +49,6 @@
         </div>
       </div>
     </article>
-
-    <article class="promo-slide" data-slide
-      style="--bg:url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=2400&q=80');">
-      <div class="promo-overlay"></div>
-
-      <div class="promo-inner">
-        <div class="promo-box">
-          <p class="promo-eyebrow">BEST SELLERS</p>
-          <h1 class="promo-title">Upgrade your basics, instantly</h1>
-          <p class="promo-text">Timeless tees, jackets, and accessories—built to last.</p>
-          <a href="{{ route('services.all') }}" class="promo-btn">Explore Now</a>
-        </div>
-      </div>
-    </article>
-
   </div>
 
   <button class="promo-nav prev" type="button" aria-label="Previous slide" data-slider-prev>‹</button>
@@ -98,9 +83,17 @@
 
                         <!-- Price -->
                         <div class="price-wrap">
-                        <span class="price">${{ $service->price }}</span>
-                        <span class="price-month">/Month</span>
+                          <span class="price">${{ $service->price }}</span>
+
+                          @if(Str::lower($service->name) === 'premium')
+                              <span class="price-month">/24Mo</span>
+                          @elseif(Str::lower($service->name) === 'essential')
+                              <span class="price-month">/3Mo</span>
+                          @else
+                              <span class="price-month">/Mo</span>
+                          @endif
                         </div>
+
 
                         <!-- Actions -->
                         <div class="card-actions">
