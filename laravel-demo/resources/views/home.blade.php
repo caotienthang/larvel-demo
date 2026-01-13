@@ -83,7 +83,7 @@
 
                         <!-- Price -->
                         <div class="price-wrap">
-                          <span class="price">${{ $service->price }}</span>
+                          <span class="price">${{ number_format($service->price, 0) }}</span>
 
                           @if(Str::lower($service->name) === 'premium')
                               <span class="price-month">/24Mo</span>
