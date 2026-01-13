@@ -123,7 +123,7 @@
   <section class="hero-split">
     <div class="hero-bg">
       <img
-        src="https://lunasjaya.com/wp-content/uploads/2025/11/Untitled-design-44.png"
+        src="https://egead.nyc3.cdn.digitaloceanspaces.com/1767846284953ysegy7.webp"
         alt="About Rabbioz"
       >
     </div>
