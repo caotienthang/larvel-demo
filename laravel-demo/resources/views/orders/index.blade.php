@@ -65,11 +65,15 @@
                     <a class="btn small outline" href="{{ route('orders.show', $inv->id) }}">View</a>
 
                     @if($inv->status !== 'canceled')
-                      <form class="inline cancel-form" method="POST" action="{{ route('orders.cancel', $inv->id) }}">
-                        @csrf
-                        @method('PATCH')
-                        <button class="btn small danger" type="submit">Cancel</button>
-                      </form>
+                      <button
+                        type="button"
+                        class="btn small danger"
+                        data-open-cancel
+                        data-cancel-action="{{ route('orders.cancel', $inv->id) }}"
+                        data-order-id="{{ $inv->id }}"
+                      >
+                        Cancel
+                      </button>
                     @endif
                   </td>
                 </tr>
@@ -146,6 +150,54 @@
       </div>
     </main>
   </div>
+  <div class="nfx-overlay" id="cancelOverlay" aria-hidden="true">
+  <div class="nfx-modal" role="dialog" aria-modal="true" aria-labelledby="cancelTitle">
+    <div class="nfx-modal__head">
+      <div>
+        <h3 class="nfx-modal__title" id="cancelTitle">Cancel order?</h3>
+        <p class="nfx-sub" id="cancelSubtitle">
+          Your order will be canceled immediately. If you change your mind, you’ll need to place a new order.
+        </p>
+      </div>
+      <button class="nfx-close" type="button" aria-label="Close" data-close-cancel>✕</button>
+    </div>
+
+    <div class="nfx-modal__body">
+      <div class="nfx-warn">
+        This action can’t be undone. Any access to the service (if applicable) will end after cancellation.
+      </div>
+
+      <form id="cancelForm" class="nfx-form" method="POST" action="">
+        @csrf
+        @method('PATCH')
+
+        <input type="hidden" name="order_id" id="cancelOrderId" value="">
+
+        <select name="reason" class="nfx-select">
+          <option class="nfx-select-option" value="">Why are you canceling? (optional)</option>
+          <option class="nfx-select-option" value="changed_mind">I changed my mind</option>
+          <option class="nfx-select-option" value="ordered_by_mistake">I ordered by mistake</option>
+          <option class="nfx-select-option" value="found_better_option">I found a better option</option>
+          <option class="nfx-select-option" value="delivery_time">Delivery/service time is too long</option>
+          <option class="nfx-select-option" value="other">Other</option>
+        </select>
+
+        <textarea name="note" class="nfx-textarea" placeholder="Tell us more (optional)"></textarea>
+
+        <div class="nfx-modal__foot" style="padding:0; border-top:0; margin-top: 10px;">
+          <button type="button" class="nfx-btn nfx-btn--ghost" data-close-cancel>
+            Keep Order
+          </button>
+
+          <button type="submit" class="nfx-btn nfx-btn--danger" id="confirmCancelBtn">
+            Yes, Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
   @include('layouts.footer')
 </body>
 </html>

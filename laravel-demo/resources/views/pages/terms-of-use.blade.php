@@ -65,11 +65,6 @@
     </div>
 
     <div class="terms-body">
-      <p>
-        These Terms are provided as a general template for an e-commerce website. You should have them reviewed by
-        counsel to ensure compliance with your jurisdiction and business model.
-      </p>
-
       <h2 id="acceptance">1. Acceptance of Terms</h2>
       <p>
         By accessing or using Lunasjaya, you confirm that you have read, understood, and agree to be bound by these Terms

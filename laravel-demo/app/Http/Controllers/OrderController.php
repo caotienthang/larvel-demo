@@ -45,9 +45,18 @@ class OrderController extends Controller
             return back()->with('success', 'This order has already been canceled.');
         }
 
+        $data = $request->validate([
+            'reason' => ['nullable', 'string', 'max:100'],
+            'note'   => ['nullable', 'string', 'max:500'],
+        ]);
+
         $invoice->status = 'canceled';
+        // Nếu bạn có cột lưu reason/note thì lưu; nếu chưa có thì bỏ 2 dòng dưới
+        // $invoice->cancel_reason = $data['reason'] ?? null;
+        // $invoice->cancel_note   = $data['note'] ?? null;
         $invoice->save();
 
-        return back()->with('success', 'Order canceled successfully.');
+        return back()->with('success', 'Your order has been canceled.');
     }
+
 }

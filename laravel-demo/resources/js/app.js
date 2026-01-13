@@ -6,6 +6,7 @@ import '../css/service/services.css'
 import '../css/service/service-detail.css'
 import '../css/user/profile.css'
 import './user/profile.js'
+import './user/order.js'
 import './service/service-detail.js'
 import './home.js'
 import '../css/about.css';

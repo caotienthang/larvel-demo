@@ -150,6 +150,42 @@
       <li><strong>Fees:</strong> Lunasjaya does not charge additional payment processing fees.</li>
       <li><strong>Currency conversion:</strong> Your bank or provider may apply conversion fees.</li>
     </ul>
+    <!-- 5.1 -->
+    <h2>5.1. Promotional & Subscription Packages</h2>
+
+    <p>
+      Any promotional, discounted, or subscription-based package offered by
+      <strong>Lunasjaya</strong> will remain valid for the duration stated at the
+      time of purchase, unless earlier terminated in accordance with this policy.
+    </p>
+
+    <p>
+      To use promotional or subscription packages, you must have:
+    </p>
+
+    <ul>
+      <li>Active internet access</li>
+      <li>A compatible device supported by our platform</li>
+      <li>A valid and accepted payment method on file</li>
+    </ul>
+
+    <p>
+      A “<strong>Payment Method</strong>” refers to a current, valid, and accepted
+      payment option, which may be updated from time to time and may include
+      payments processed through your account or a third-party provider.
+    </p>
+
+    <p>
+      Unless you cancel before the applicable billing date, you authorize
+      <strong>Lunasjaya</strong> to automatically charge the recurring or renewal
+      fee for the next billing cycle to your selected payment method.
+    </p>
+
+    <p>
+      You may cancel or modify your package at any time before the renewal date
+      to avoid future charges. Details regarding cancellation are provided in
+      the <strong>Refunds & Returns</strong> section below.
+    </p>
 
     <!-- 6 -->
     <h2>6. Declined or Failed Payments</h2>
