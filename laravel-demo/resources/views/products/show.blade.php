@@ -18,47 +18,55 @@
       </div>
     </div>
 
-    <div class="p-grid">
-      {{-- Image --}}
-      <div class="p-media">
-        <img class="p-img" src="{{ $product->image }}" alt="{{ $product->name }}">
-      </div>
+    {{-- Ảnh trên --}}
+    <div class="p-media">
+      <img class="p-img" src="{{ $product->image }}" alt="{{ $product->name }}">
+    </div>
 
-      {{-- Specs / Table --}}
-      <div class="p-card">
-        <h2 class="p-h2">Product Details</h2>
+    {{-- Bảng xuống dưới ảnh --}}
+    <div class="p-card">
+      <h2 class="p-h2">Product Details</h2>
 
-        <table class="p-table">
-          <tbody>
-            <tr>
-              <th>Description</th>
-              <td>{{ $product->description ?? 'No description yet.' }}</td>
-            </tr>
-            <tr>
-              <th>Size</th>
-              <td class="muted">— (to be updated)</td>
-            </tr>
-            <tr>
-              <th>Material</th>
-              <td class="muted">— (to be updated)</td>
-            </tr>
-            <tr>
-              <th>Color</th>
-              <td class="muted">— (to be updated)</td>
-            </tr>
-            <tr>
-              <th>Stock</th>
-              <td class="muted">— (to be updated)</td>
-            </tr>
-            <tr>
-              <th>SKU</th>
-              <td class="muted">— (to be updated)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table class="p-table">
+        <tbody>
+          <tr>
+            <th>Description</th>
+            <td>
+              <div class="p-desc">
+                @if(!empty($product->description))
+                  {!! $product->description !!}
+                @else
+                  <span class="muted">No description yet.</span>
+                @endif
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th>Size</th>
+            <td class="muted">— (to be updated)</td>
+          </tr>
+          <tr>
+            <th>Material</th>
+            <td class="muted">— (to be updated)</td>
+          </tr>
+          <tr>
+            <th>Color</th>
+            <td class="muted">— (to be updated)</td>
+          </tr>
+          <tr>
+            <th>Stock</th>
+            <td class="muted">— (to be updated)</td>
+          </tr>
+          <tr>
+            <th>SKU</th>
+            <td class="muted">— (to be updated)</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+
   @include('layouts.footer')
 </body>
 </html>
