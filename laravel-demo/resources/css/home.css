@@ -69,7 +69,7 @@ body{
   transform: scale(1.02);
   transition: opacity .5s ease, transform .7s ease;
   background-image: var(--bg);
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 

@@ -37,7 +37,7 @@
     </article>
 
     <article class="promo-slide" data-slide
-      style="--bg:url('https://egead.nyc3.cdn.digitaloceanspaces.com/1767846284953ysegy7.webp');">
+      style="--bg:url('https://egead.nyc3.cdn.digitaloceanspaces.com/1768469194069b2rc0m.webp');">
       <div class="promo-overlay"></div>
 
       <div class="promo-inner">
@@ -115,10 +115,6 @@
   {{-- FULL IMAGE SPLIT CONTENT --}}
   <section class="hero-split">
     <div class="hero-bg">
-      <img
-        src="https://egead.nyc3.cdn.digitaloceanspaces.com/1767846284953ysegy7.webp"
-        alt="About Rabbioz"
-      >
     </div>
 
     <div class="hero-content container">
