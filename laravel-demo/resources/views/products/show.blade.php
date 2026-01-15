@@ -20,7 +20,7 @@
 
     {{-- Ảnh trên --}}
     <div class="p-media">
-      <img class="p-img" src="{{ $product->image }}" alt="{{ $product->name }}">
+      <img class="p-img" src="{{ asset($product->image) }}" alt="{{ $product->name }}">
     </div>
 
     {{-- Bảng xuống dưới ảnh --}}
