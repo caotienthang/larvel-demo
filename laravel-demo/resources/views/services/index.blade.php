@@ -41,14 +41,7 @@
                         <!-- Price -->
                         <div class="price-wrap">
                           <span class="price">${{ number_format($service->price, 0) }}</span>
-
-                          @if(Str::lower($service->name) === 'premium')
-                              <span class="price-month">/24Mo</span>
-                          @elseif(Str::lower($service->name) === 'essential')
-                              <span class="price-month">/3Mo</span>
-                          @else
-                              <span class="price-month">/Mo</span>
-                          @endif
+                          <span class="price-month">/Mo</span>
                         </div>
 
                         <!-- Actions -->
