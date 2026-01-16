@@ -47,7 +47,7 @@
                         <!-- Actions -->
                         <div class="card-actions">
                         {{-- Add to cart --}}
-                        <form method="POST" action="{{ route('services.all') }}" class="add-cart-form">
+                        <form method="GET" action="{{ route('checkout.show', $service) }}" class="add-cart-form">
                             @csrf
                             <input type="hidden" name="service_id" value="{{ $service->id }}">
                             <button type="submit" class="btn-add-cart">
