@@ -65,8 +65,8 @@
       @if(!empty($service?->description))
         <div class="checkout-row" style="align-items:flex-start;">
           <div class="checkout-k">Description</div>
-          <div class="checkout-v">
-            {{ $service->description }}
+          <div class="checkout-v checkout-description">
+            {!! $service->description !!}
           </div>
         </div>
       @endif
