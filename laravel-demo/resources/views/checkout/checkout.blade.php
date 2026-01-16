@@ -160,7 +160,7 @@
           Cannot continue: missing service id.
         </div>
         <div class="checkout-actions" style="margin-top:12px;">
-          <a class="btn-secondary" href="{{ url()->previous() }}">← Back</a>
+          <a class="btn-secondary" href="{{ route('services.all') }}">← Back</a>
         </div>
       @endif
 
