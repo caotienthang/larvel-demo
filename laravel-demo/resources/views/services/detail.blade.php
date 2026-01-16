@@ -45,9 +45,9 @@
 
       <div class="sd-buy-right">
         {{-- Bạn thay route/pay theo hệ thống của bạn --}}
-        <orm method="GET" action="{{ route('checkout.show', $service) }}" class="add-cart-form">
+        <form method="GET" action="{{ route('checkout.show', $service) }}" class="add-cart-form">
           @csrf
-          <input type="hidden" name="service_id" value="{{ $service->id }}">
+
           <button type="submit" class="sd-pay">
             <i class="fa-solid fa-credit-card"></i>
             Pay Now
