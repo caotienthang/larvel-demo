@@ -151,7 +151,7 @@
           </div>
 
           <div class="checkout-actions">
-            <a class="btn-secondary" href="{{ url()->previous() }}">← Back</a>
+            <a class="btn-secondary" href="{{ route('services.all') }}">← Back</a>
             <button type="submit" class="btn-primary">Continue to PayPal</button>
           </div>
         </form>
