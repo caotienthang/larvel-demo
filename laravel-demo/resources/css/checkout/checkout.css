@@ -157,3 +157,56 @@
 @media (max-width: 900px){
   .checkout-grid{ grid-template-columns: 1fr; }
 }
+/* ===== Checkout Description ===== */
+.checkout-description {
+  font-size: 15px;
+  color: #1f2937;
+}
+
+.checkout-description ul {
+  list-style: none;      /* bỏ bullet mặc định */
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.checkout-description li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  padding: 8px 0;
+  line-height: 1.45;
+}
+
+/* Icon */
+.checkout-description .feature-icon,
+.checkout-description i {
+  min-width: 20px;
+  font-size: 16px;
+  color: #2563eb;        /* xanh sang */
+  margin-top: 2px;
+}
+
+/* Text */
+.checkout-description li span,
+.checkout-description li div {
+  flex: 1;
+}
+
+/* Xuống dòng đẹp */
+.checkout-description br {
+  display: none;
+}
+
+.checkout-description li small {
+  display: block;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .checkout-description {
+    font-size: 14px;
+  }
+}
