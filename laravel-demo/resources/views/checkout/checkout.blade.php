@@ -128,7 +128,7 @@
 
       {{-- Nếu không có serviceId thì không cho submit để tránh route lỗi --}}
       @if($serviceId)
-        <form method="POST" action="{{ route('checkout.fake', ['service' => $serviceId]) }}">
+        <form method="POST" action="{{ route('checkout.paypal', ['service' => $serviceId]) }}">
           @csrf
 
           <div class="checkout-row" style="align-items:flex-start;">

@@ -7,6 +7,7 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PayPalController;
 
 Route::get('/', [ServiceController::class,'index'])->name('home');
 
@@ -43,7 +44,7 @@ Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [UserProfileController::class, 'index'])->name('profile');
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
-    Route::get('/orders/{invoice}', [OrderController::class, 'show'])->name('orders.show');
+    Route::get('/orders/{invoice}', [OrderController::class, 'show'])->whereNumber('invoice')->name('orders.show');
     Route::patch('/orders/{invoice}/cancel', [OrderController::class, 'cancel'])->name('orders.cancel');
     Route::put('/profile/phone', [UserProfileController::class, 'updatePhone'])->name('profile.phone.update');
 });
@@ -60,16 +61,28 @@ Route::view('/warranty-policy', 'pages.warranty')->name('policy.warranty');
 Route::view('/review-feedback-policy', 'pages.review-feedback')->name('policy.review_feedback');
 Route::view('/customer-support-issue-resolution-policy', 'pages.support-issue-resolution')->name('policy.support_issue_resolution');
 Route::view('/cookie-policy', 'pages.cookie')->name('policy.cookie');
-Route::middleware('auth')->group(function () {
-    Route::get('/checkout/{service}', [CheckoutController::class, 'show'])
-        ->name('checkout.show');
-});
 Route::get('/products/{product}', [ProductController::class, 'show'])
     ->name('products.show');
-Route::post('/checkout/fake', [CheckoutController::class, 'fakeCheckout'])
-    ->name('checkout.fake');
 Route::view('/terms-of-use', 'pages.terms-of-use')->name('terms');
+Route::middleware(['auth'])->group(function () {
+    // Trang hiển thị checkout (PayNow -> show)
+    Route::get('/checkout/{service}', [CheckoutController::class, 'show'])
+        ->name('checkout.show');
 
+    // Nút "Continue to PayPal" -> tạo invoice + tạo paypal order + redirect
+    Route::post('/checkout/{service}/paypal', [CheckoutController::class, 'payWithPaypal'])
+        ->name('checkout.paypal');
+
+    // PayPal return/cancel
+    Route::get('/paypal/return', [PayPalController::class, 'return'])
+        ->name('paypal.return');
+    Route::get('/orders/success', function () {
+        return view('orders.success');
+    })->name('orders.success');
+
+    Route::get('/paypal/cancel', [PayPalController::class, 'cancel'])
+        ->name('paypal.cancel');
+});
 
 
 

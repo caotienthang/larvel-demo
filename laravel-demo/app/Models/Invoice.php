@@ -19,4 +19,9 @@ class Invoice extends Model
     public function details() {
         return $this->hasMany(InvoiceDetail::class, 'invoice_id');
     }
+    public function paypalPayment()
+    {
+        return $this->hasOne(PaypalPayment::class);
+    }
+
 }
