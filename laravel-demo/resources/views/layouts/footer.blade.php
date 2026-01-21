@@ -85,6 +85,7 @@
     </div>
 
   </div>
+</footer>
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]function(){(c[a].q=c[a].q[]).push(arguments)};
@@ -92,4 +93,3 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "svjh1cf725");
   </script>
-</footer>
